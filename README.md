@@ -4,15 +4,27 @@
 
 ## 💻 Screenshots
 
-image.png 
+<img width="1792" height="997" alt="image" src="https://github.com/user-attachments/assets/4ab2d12e-076b-47cf-8147-6b95e6913358" />
+
+<img width="1791" height="997" alt="image" src="https://github.com/user-attachments/assets/8d725f2a-737b-443e-a00f-a1e1b20d7085" />
+
+<img width="1792" height="995" alt="image" src="https://github.com/user-attachments/assets/d07acd59-577a-4df0-8793-2d0cb337ec1d" />
+
+<img width="1792" height="997" alt="image" src="https://github.com/user-attachments/assets/2e243c3f-b229-425c-8091-7ec6e329108c" />
+
+<img width="1792" height="999" alt="image" src="https://github.com/user-attachments/assets/33771b46-76df-497c-87f0-e7c3ff551e2c" />
+
+<img width="648" height="633" alt="image" src="https://github.com/user-attachments/assets/f8aa6522-0592-4270-8e24-f1dcc11c0f41" />
+
 
 ## ✨ Features
 
 - 🔍 **Smart Search** - Real-time exercise search with debounced API calls for optimal performance
 - 🎯 **Browse by Muscle Groups** 
 - 💪 **Browse by Body Parts** 
-- 🏃 **Browse by Equipment** 
-- 📊 **Detailed Exercise Pages** - View exercise instructions, animated GIFs, and targeted muscles
+- 🏃 **Browse by Equipment**
+- 🏌 **Animated Exercise** - animated GIF explains the exercise
+- 📊 **Detailed Exercise Pages** - View exercise instructions,  and targeted muscles
 - 🎨 **Modern UI/UX** - Clean design with smooth animations
 
 ## 🛠️ Tech Stack
