@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ KeepFit
 
-## Getting Started
+**Keep fit, feel better** - A modern fitness web app for discovering 1000+ exercises by body parts, muscles, and equipments. built with Next.js and React.
 
-First, run the development server:
+## 💻 Screenshots
 
+image.png 
+
+## ✨ Features
+
+- 🔍 **Smart Search** - Real-time exercise search with debounced API calls for optimal performance
+- 🎯 **Browse by Muscle Groups** 
+- 💪 **Browse by Body Parts** 
+- 🏃 **Browse by Equipment** 
+- 📊 **Detailed Exercise Pages** - View exercise instructions, animated GIFs, and targeted muscles
+- 🎨 **Modern UI/UX** - Clean design with smooth animations
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16.1.6
+- **UI Library:** React 19.2.3
+- **Styling:** Custom CSS with modern animations
+- **API:** ExerciseDB API https://exercisedb.dev/
+- **Compiler:** React Compiler enabled for enhanced performance
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or higher
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+
+2. Install dependencies:
+
+3. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+fitness/
+├── app/
+│   ├── [singleExercise]/      # Dynamic route for individual exercise details
+│   ├── bodyParts/              # Body parts browsing and filtering
+│   │   └── [bodyPartsExercises]/
+│   ├── muscles/                # Muscle groups browsing and filtering
+│   │   └── [muscleExercises]/
+│   ├── equipments/             # Equipment-based filtering
+│   │   └── [equipmentsExercises]/
+│   ├── components/             # Reusable components
+│   │   ├── Navbar.js
+│   │   └── SearchBar.js
+│   ├── globals.css             # Global styles and animations
+│   ├── layout.js               # Root layout
+│   └── page.js                 # Home page
+└── public/
+    └── assets/                 # Images and static assets
+```
 
-## Learn More
+## 🎯 Use Cases
 
-To learn more about Next.js, take a look at the following resources:
+- Find exercises for specific muscle groups
+- Filter exercises by available equipment at home or gym
+- Learn proper exercise techniques with animated GIFs
+- Build personalized workout plans based on your goals
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Contributions, issues, and feature requests are welcome! 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ❤️.
