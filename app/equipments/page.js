@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import './equipments.css';
+import { fetchEquipments } from '../lib/exercisedb';
 
 export default async function Equipments() {
-  const response = await fetch('https://exercisedb.dev/api/v1/equipments', { cache: 'force-cache' });
-  const equipmentsData = await response.json();
-  const equipments = equipmentsData.data || [];
+  const equipments = await fetchEquipments();
 
   return (
     <div className="body-parts-container">

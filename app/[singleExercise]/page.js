@@ -1,23 +1,10 @@
 import './singleExercise.css';
 import '../globals.css';
-
-async function fetchExercise(exerciseId) {
-  try {
-    const response = await fetch(
-      `https://exercisedb.dev/api/v1/exercises/${exerciseId}`,
-      { cache: 'no-store' }
-    );
-    const data = await response.json();
-    return data.data || null;
-  } catch (error) {
-    console.error(`Error fetching exercise ${exerciseId}:`, error);
-    return null;
-  }
-}
+import { fetchExerciseById } from '../lib/exercisedb';
 
 export default async function SingleExercise({ params }) {
   const { singleExercise } = await params;
-  const exercise = await fetchExercise(singleExercise);
+  const exercise = await fetchExerciseById(singleExercise);
 
   if (!exercise) {
     return (

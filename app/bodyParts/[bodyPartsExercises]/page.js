@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import './bodyPartsExercises.css';
 import '../bodyParts.css';
+import { fetchExercisesByBodyPart } from '../../lib/exercisedb';
 
 // Map display names to API names
 const bodyPartMap = {
@@ -12,26 +13,10 @@ const bodyPartMap = {
   'Core': 'waist'
 };
 
-async function fetchExercises(bodyPart) { 
-  try {
-    const apiName = bodyPartMap[bodyPart] || bodyPart.toLowerCase();
-    const response = await fetch(
-      `https://exercisedb.dev/api/v1/bodyparts/${apiName}/exercises`,
-      { cache: 'force-cache' }
-    );
-    const data = await response.json();
-    console.log("========the data========", data.data);
-    return data.data ;
-  } catch (error) {
-    console.error(`Error fetching exercises for ${bodyPart}:`, error);
-    return [];
-  }
-}
-
 export default async function BodyPartsExercises({ params }) {
   const { bodyPartsExercises } = await params;
-  const exercises = await fetchExercises(bodyPartsExercises);
-  console.log("========the exercises========", exercises);
+  const apiName = bodyPartMap[bodyPartsExercises] || bodyPartsExercises.toLowerCase();
+  const exercises = await fetchExercisesByBodyPart(apiName);
   return (
     <div className="body-parts-container">
       <h1 className="primary-font">{bodyPartsExercises} Exercises</h1>

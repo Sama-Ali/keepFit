@@ -42,8 +42,15 @@ export default function SearchBar() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://exercisedb.dev/api/v1/exercises/search?q=${encodeURIComponent(query)}`
+        `https://oss.exercisedb.dev/api/v1/exercises/search?search=${encodeURIComponent(query)}`,
+        { headers: { Accept: 'application/json' } }
       );
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        setSearchResults([]);
+        setShowResults(false);
+        return;
+      }
       const data = await response.json();
       setSearchResults(data.data || []);
       setShowResults(true);
