@@ -1,25 +1,11 @@
 import Link from 'next/link';
 import './equipmentsExercises.css';
 import '../equipments.css';
-
-async function fetchExercises(equipment) { 
-  try {
-    const response = await fetch(
-      `https://exercisedb.dev/api/v1/equipments/${equipment}/exercises`,
-      { cache: 'no-store' }
-    );
-    const data = await response.json();
-    console.log("Equipment API Response:", data);
-    return data.data || [];
-  } catch (error) {
-    console.error(`Error fetching exercises for ${equipment}:`, error);
-    return [];
-  }
-}
+import { fetchExercisesByEquipment } from '../../lib/exercisedb';
 
 export default async function EquipmentsExercises({ params }) {
   const { equipmentsExercises } = await params;
-  const exercises = await fetchExercises(equipmentsExercises);
+  const exercises = await fetchExercisesByEquipment(equipmentsExercises);
   
   return (
     <div className="equipments-exercises-container">

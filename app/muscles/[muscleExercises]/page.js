@@ -1,25 +1,11 @@
 import Link from 'next/link';
 import './musclesExercises.css';
 import '../../globals.css';
-
-async function fetchExercises(muscle) { 
-    try {
-      const response = await fetch(
-        `https://exercisedb.dev/api/v1/muscles/${muscle}/exercises`,
-        { cache: 'no-store' }
-      );
-      const data = await response.json();
-      console.log("========the data========", data);
-      return data.data || [];
-    } catch (error) {
-      console.error(`Error fetching exercises for ${muscle}:`, error);
-      return [];
-    }
-  }
+import { fetchExercisesByMuscle } from '../../lib/exercisedb';
 
 export default async function MusclesExercises({ params }) {
   const { muscleExercises } = await params;
-  const exercises = await fetchExercises(muscleExercises) || [];
+  const exercises = await fetchExercisesByMuscle(muscleExercises) || [];
   return (
     <div className="muscles-exercises-container">
       <h1 className="primary-font">{muscleExercises} Exercises</h1>

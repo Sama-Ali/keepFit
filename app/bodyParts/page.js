@@ -1,12 +1,6 @@
 import './bodyParts.css';
 import Link from 'next/link';
-
-// fetch body part exercises from the API
-async function fetchBodyPartExercises(bodyPart) {
-    const response = await fetch(`https://exercisedb.dev/api/v1/bodyparts/${bodyPart}/exercises?limit=1`, { cache: 'force-cache' })
-    const data = await response.json();
-    return data.data ? data.data[0] : null;
-}
+import { fetchBodyPartExercise } from '../lib/exercisedb';
 
 export default async function BodyParts() {
   const bodyParts = [
@@ -18,14 +12,12 @@ export default async function BodyParts() {
     { name: 'Core', apiName: 'waist' }
   ];
 
-  // Fetch exercises for all body parts in paralle
   const exercisesData = await Promise.all(
     bodyParts.map(async (part) => ({
       ...part,
-      exercise: await fetchBodyPartExercises(part.apiName)
+      exercise: await fetchBodyPartExercise(part.apiName)
     }))
   );
-//   console.log("the exercises data", exercisesData);
 
   return (
     <div className="body-parts-container">
